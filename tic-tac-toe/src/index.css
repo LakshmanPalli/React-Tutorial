@@ -8,7 +8,7 @@ body {
   }
   
   .board-row:after {
-    clear: both;
+    clear: both; /* When you are using CSS float and want next element below, not on right or left. */
     content: "";
     display: table;
   }
@@ -19,17 +19,17 @@ body {
   
   .square {
     background: #fff;
-    border: 1px solid #999;
+    border: 1px solid rgb(51, 212, 30);
     float: left;
-    font-size: 24px;
+    font-size: 34px;
     font-weight: bold;
-    line-height: 34px;
-    height: 34px;
+    line-height: 50px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 34px;
+    height: 50px;
+    width: 50px;
   }
   
   .square:focus {
