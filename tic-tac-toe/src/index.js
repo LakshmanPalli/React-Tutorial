@@ -19,7 +19,7 @@ function Square(props) {
 
     renderSquare(i) {
       return (
-      <Square    //we are sending props(square values) from [Board], so no vlues & state in [Square].
+      <Square    //we are sending props(square values) from [Game]
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
       />
@@ -64,7 +64,7 @@ function Square(props) {
       const history = this.state.history.slice(0, this.state.stepNumber + 1); //creating a new copy of history[[..]]
       const current = history[history.length-1]; 
       const squares = current.squares.slice();
-      if (calculateWinner(squares) || squares[i]){
+      if (calculateWinner(squares) || squares[i]){ //not change the value on the square once filled
         return;
       }
       squares[i] = this.state.xIsNext ? 'X':'O';
